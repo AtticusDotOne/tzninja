@@ -7,18 +7,21 @@
       <tr><td>London</td><td>{{ getOtherTime('Europe/London') }}</td></tr>
       <tr><td>Tokyo</td><td>{{ getOtherTime('Asia/Tokyo') }}</td></tr>
       <tr><td>
-        <select @change="onSelect($event)">
-          <option value="" default>GMT</option>
-          <option v-for="tz in this.$store.state.timezones.list" :key="tz.id" :value="tz.tz">{{tz.tz}}</option>
-      </select></td><td>{{ getOtherTime(selected) }}</td></tr>
+        <autocomplete @selected="onSelect($event)"
+          :source="this.$store.state.timezones.list" />
+        </td><td>{{ getOtherTime(selected) }}</td></tr>
     </table>
   </div>
 </template>
 
 <script>
 import moment from 'moment-timezone'
+import Autocomplete from 'vuejs-auto-complete'
 
 export default {
+  components: {
+    Autocomplete
+  },
   data() {
     return {
       tz: moment.tz.guess(),
@@ -37,7 +40,7 @@ export default {
       return moment.tz(this.now, tz)
     },
     onSelect(event) {
-      this.selected = event.target.value
+      this.selected = event.display
     }
   }
 }
