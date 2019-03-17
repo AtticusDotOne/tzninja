@@ -3,6 +3,10 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
+  env: {
+    JSON_SERVER: process.env.JSON_SERVER || 'http://localhost:3001'
+  },
+
   /*
    ** Headers of the page
    */
