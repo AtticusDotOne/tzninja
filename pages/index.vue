@@ -8,7 +8,6 @@
       </option>
     </select>
     <div v-if="myteam !== {}">
-      <p>{{ this.myteam.name }}</p>
       <table>
         <tr v-for="(userId, index) in this.myteam.members" :key="index">
           <td>{{ users[userId - 1].name }}</td>
@@ -52,9 +51,6 @@ export default {
     },
     onTeamSelect(event) {
       this.myteam = this.$store.state.teams.list[parseInt(event.target.value) - 1]
-    },
-    onSelect(event) {
-      this.selected = event.display
     }
   }
 }
