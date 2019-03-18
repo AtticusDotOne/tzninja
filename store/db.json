@@ -1,4 +1,68 @@
 {
+    "users": [
+        {
+            "id": 1,
+            "name": "Sam B.",
+            "tz": "Asia/Singapore"
+        },
+        {
+            "id": 2,
+            "name": "Troy M.",
+            "tz": "America/Mexico_City"
+        },
+        {
+            "id": 3,
+            "name": "Yuri N.",
+            "tz": "Asia/Tokyo"
+        },
+        {
+            "id": 4,
+            "name": "Pilar M.",
+            "tz": "Europe/Madrid"
+        },
+        {
+            "id": 5,
+            "name": "John B.",
+            "tz": "America/Los_Angeles"
+        },
+        {
+            "id": 6,
+            "name": "Jessyca C.",
+            "tz": "America/Los_Angeles"
+        },
+        {
+            "id": 7,
+            "name": "Christian G.",
+            "tz": "America/Los_Angeles"
+        },
+        {
+            "id": 8,
+            "name": "JP",
+            "tz": "Australia/Perth"
+        },
+        {
+            "id": 9,
+            "name": "Lucas",
+            "tz": "Australia/Brisbane"
+        }
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "name": "Katana Dev",
+            "members": [1, 2, 3, 4]
+        },
+        {
+            "id": 2,
+            "name": "Audit Property Management",
+            "members": [1, 2, 5, 6]
+        },
+        {
+            "id": 3,
+            "name": "Miner",
+            "members": [1, 2, 7, 8, 9]
+        }
+    ],
     "timezones": [
         {"id": 1, "country": "CI", "name": "Africa/Abidjan"},
         {"id": 2, "country": "GH", "name": "Africa/Accra"},
