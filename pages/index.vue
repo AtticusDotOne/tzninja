@@ -33,7 +33,6 @@ export default {
       tz: moment.tz.guess(),
       now: new Date(),
       selected: "",
-      myuser: {"id": 1, "name": "Sam B.", "tz": "America/Mexico_City"},
       myteam: {},
       teams: this.$store.state.teams.list,
       users: this.$store.state.users.list
