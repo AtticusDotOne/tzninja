@@ -42,6 +42,11 @@
         },
         {
             "id": 9,
+            "name": "Nataliya H.",
+            "tz": "America/Toronto"
+        },
+        {
+            "id": 10,
             "name": "Lucas",
             "tz": "Australia/Brisbane"
         }
@@ -60,7 +65,7 @@
         {
             "id": 3,
             "name": "Miner",
-            "members": [1, 2, 7, 8, 9]
+            "members": [1, 2, 7, 8, 9, 10]
         }
     ],
     "timezones": [
