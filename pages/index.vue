@@ -12,6 +12,7 @@
         <tr v-for="(userId, index) in this.myteam.members" :key="index">
           <td>{{ users[userId - 1].name }}</td>
           <td>{{ users[userId - 1].tz }}</td>
+          <td>{{ getOtherDate(users[userId - 1].tz) }}</td>
           <td>{{ getOtherTime(users[userId - 1].tz) }}</td>
         </tr>
       </table>
@@ -32,6 +33,7 @@ export default {
       tz: moment.tz.guess(),
       now: new Date(),
       selected: "",
+      myuser: {"id": 1, "name": "Sam B.", "tz": "America/Mexico_City"},
       myteam: {},
       teams: this.$store.state.teams.list,
       users: this.$store.state.users.list
@@ -46,8 +48,11 @@ export default {
     setInterval(() => this.now = new Date, 1000)
   },
   methods: {
+    getOtherDate(tz) {
+      return moment.tz(this.now, tz).format('YYYY-MM-DD dddd')
+    },
     getOtherTime(tz) {
-      return moment.tz(this.now, tz)
+      return moment.tz(this.now, tz).format('hh:mm:ss A')
     },
     onTeamSelect(event) {
       this.myteam = this.$store.state.teams.list[parseInt(event.target.value) - 1]
