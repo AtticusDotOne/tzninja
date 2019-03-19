@@ -11,7 +11,7 @@
       <table>
         <tr v-for="(userId, index) in this.myteam.members" :key="index">
           <td>{{ users[userId - 1].name }}</td>
-          <td>{{ users[userId - 1].tz }}</td>
+          <td>{{ showCity(users[userId - 1].tz) }}</td>
           <td>{{ getOtherDate(users[userId - 1].tz) }}</td>
           <td>{{ getOtherTime(users[userId - 1].tz) }}</td>
         </tr>
@@ -55,6 +55,9 @@ export default {
     },
     onTeamSelect(event) {
       this.myteam = this.$store.state.teams.list[parseInt(event.target.value) - 1]
+    },
+    showCity(tz) {
+      return tz.split('/').pop().replace('_', ' ')
     }
   }
 }
